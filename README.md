@@ -2,6 +2,15 @@
 
 The task is to restore punctuation for Russian language. To solve this, I finetuned RuBERT on Lenta dataset from [Taiga corpus](https://tatianashavrina.github.io/taiga_site/).
 
+# Service
+The model can be deployed as a web service with RESTful API:
+```commandline
+docker build -t punctuator .
+docker run -p 5000:5000 punctuator
+```
+The model interface described by an API doc will be available 
+at http://localhost:5000/docs. 
+
 # Demo
 
 Evaluation and results are shown in Demo.ipynb notebook. To to re-run this notebook, put model.zip in the working directory 
@@ -9,7 +18,8 @@ and ensure that there is an internet connection from notebook runtime.
 
 # Model weights
 
-Trained model weights are available from https://drive.google.com/file/d/1uenebpycXgj82WPGUUsL-SorvGg4YT8n/view?usp=sharing
+Trained model weights are available from ~~https://drive.google.com/file/d/1uenebpycXgj82WPGUUsL-SorvGg4YT8n/view?usp=sharing~~
+https://huggingface.co/cointegrated/rubert-base-lesha17-punctuation. 
 
 # Training
 
